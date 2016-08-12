@@ -20,4 +20,11 @@ class Transaction
     @id = transaction["id"]
   end
 
+  def self.all()
+    sql = "SELECT * FROM transactions;"
+    transactions_data = SqlRunner.run( sql )
+    transactions = transactions_data.map { |t| Transaction.new(t) }
+    return transactions
+  end
+
 end
