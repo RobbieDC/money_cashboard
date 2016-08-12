@@ -27,4 +27,11 @@ class Transaction
     return transactions
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = #{id};"
+    transaction_data = SqlRunner.run( sql ).first
+    transaction = Transaction.new( transaction_data )
+    return transaction
+  end
+
 end
