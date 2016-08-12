@@ -23,6 +23,13 @@ class Merchant
     return merchants
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM merchants WHERE id = #{id};"
+    merchant_data = SqlRunner.run( sql ).first
+    merchant = Merchant.new( merchant_data )
+    return merchant
+  end
+
   def self.delete_all()
     sql = "DELETE FROM merchants;"
     SqlRunner.run( sql )
