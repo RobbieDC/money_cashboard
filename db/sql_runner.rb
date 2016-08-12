@@ -1,6 +1,6 @@
 require( "pg" )
 
-def run_sql( sql )
+def SqlRunner( sql )
   begin
     db = PG.connect( {dbname:"money_cashboard", host:"localhost"} )
     result = db.exec( sql )

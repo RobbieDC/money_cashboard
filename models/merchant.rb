@@ -10,4 +10,10 @@ class Merchant
     @name = options["name"]
   end
 
+  def save()
+    sql = "INSERT INTO merchants (name) VALUES ('#{@name}') RETURNING *;"
+    merchant = SqlRunner.run( sql ).first
+    @id = merchant["id"]
+  end
+
 end
