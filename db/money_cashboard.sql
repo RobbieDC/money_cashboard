@@ -8,7 +8,7 @@ CREATE TABLE merchants (
 
 CREATE TABLE transactions (
   id serial4 primary key,
-  value int4,
+  value money,
   tag VARCHAR(255),
   merchant_id int4 references merchants(id) ON DELETE CASCADE
 );
