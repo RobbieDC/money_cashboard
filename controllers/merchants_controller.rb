@@ -2,9 +2,16 @@ require_relative( "../models/merchant" )
 
 # 7 RESTful routes [ new, create, index, show, edit, update, destroy ]
 
-# new
+# # new
+# get "/merchants" do
+#   erb( :"merchants/new" )
+# end
+
+#index
 get "/merchants" do
-  erb( :"merchants/new" )
+  return "Merchants"
+  # @merchants = Merchant.all()
+  # erb( :"merchants/index" )
 end
 
 # #index
