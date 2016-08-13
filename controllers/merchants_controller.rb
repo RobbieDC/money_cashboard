@@ -9,9 +9,9 @@ require_relative( "../models/merchant" )
 
 #index
 get "/merchants" do
-  return "Merchants"
-  # @merchants = Merchant.all()
-  # erb( :"merchants/index" )
+  # return "Merchants"
+  @merchants = Merchant.all()
+  erb( :"merchants/index" )
 end
 
 # #index
