@@ -20,9 +20,8 @@ get "/tags" do
   erb( :"tags/index" )
 end
 
-# # show
-# get "/merchants/:id" do
-#   # return "show - merchant by id"
-#   @merchant = Merchant.find( params["id"] )
-#   erb(:"merchants/show")
-# end
+# show
+get "/tags/:id" do
+  @tag = Tag.find( params["id"] )
+  erb( :"tags/show" )
+end

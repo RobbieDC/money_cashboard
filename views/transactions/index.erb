@@ -8,7 +8,7 @@
   <% @transactions.each do |transaction| %>
     <tr>
       <td><%= transaction.merchant().name() %></td>
-      <td><%= transaction.tag() %></td>
+      <td><%= transaction.tag().type() %></td>
       <td>£<%= transaction.value() %></td>
     </tr>
   <% end %>
