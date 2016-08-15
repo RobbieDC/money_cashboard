@@ -2,17 +2,26 @@
 <html>
   <head>
     <title>Money Cashboard</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
-    <h1>Money Cashboard</h1>
-    <nav>
-      <a href="/merchants">Merchants</a> |
-      <a href="/tags">Tags</a> |
-      <a href="/transactions">Transactions</a> |
-      <a href="/merchants/new">New merchant</a> |
-      <a href="/tags/new">New tag</a> |
-      <a href="/transactions/new">New transaction</a> 
-    </nav>
-    <%= yield %>
+    <div class="header">
+      <div class="go_left">
+        <h2>Money Cashboard</h2>
+      </div>
+      <nav>
+        <div class="go_right">
+          <a href="/merchants">Merchants</a> |
+          <a href="/tags">Tags</a> |
+          <a href="/transactions">Transactions</a> |
+          <a href="/merchants/new">New merchant</a> |
+          <a href="/tags/new">New tag</a> |
+          <a href="/transactions/new">New transaction</a> 
+        </div>
+      </nav>
+    </div>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
