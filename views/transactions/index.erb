@@ -1,7 +1,15 @@
 <h3>Transactions</h3>
-<% @transactions.each do |transaction| %>
-  <p><b>Merchant: </b><%= transaction.merchant().name() %></p>
-  <p><b>Type of purchase: </b><%= transaction.tag() %></p>
-  <p><b>Value: </b><%= transaction.value() %></p>
-  <hr>
-<% end %>
+<table style="width:100%">
+  <tr>
+    <th>Merchant</th>
+    <th>Type of Purchase</th>
+    <th>Value</th>
+  </tr>
+  <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.merchant().name() %></td>
+      <td><%= transaction.tag() %></td>
+      <td>£<%= transaction.value() %></td>
+    </tr>
+  <% end %>
+</table>
