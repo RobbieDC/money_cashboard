@@ -1,5 +1,6 @@
 require( "pg" )
 require_relative( "../db/sql_runner" )
+require_relative( "./merchant" )
 
 class Tag
 
@@ -14,6 +15,13 @@ class Tag
     sql = "INSERT INTO tags (type) VALUES ('#{@type}') RETURNING *;"
     new_tag = SqlRunner.run( sql ).first
     @id = new_tag["id"]
+  end
+
+  def merchants()
+    sql = "SELECT m.* FROM merchants m 
+      INNER JOIN transactions t ON t.merchant_id = t.id 
+      WHERE t.tag_id = #{@id};"
+    return Merchant.map_items(sql)
   end
 
   def self.all()
@@ -33,6 +41,12 @@ class Tag
   def self.delete_all()
     sql = "DELETE FROM tags;"
     SqlRunner.run( sql )
+  end
+
+  def self.map_items( sql )
+    tag_data = SqlRunner.run( sql )
+    tags = tag_data.map { |tag| Tag.new( tag ) }
+    return tags
   end
 
 end
