@@ -1,0 +1,7 @@
+<h3>Transactions</h3>
+<% @transactions.each do |transaction| %>
+  <p><b>Merchant: </b><%= transaction.merchant().name() %></p>
+  <p><b>Type of purchase: </b><%= transaction.tag() %></p>
+  <p><b>Value: </b><%= transaction.value() %></p>
+  <hr>
+<% end %>

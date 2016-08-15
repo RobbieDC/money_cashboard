@@ -14,3 +14,9 @@ post "/transactions" do
   @transaction.save()
   erb(:"transactions/create")
 end
+
+# index
+get "/transactions" do
+  @transactions = Transaction.all()
+  erb( :"transactions/index" )
+end
