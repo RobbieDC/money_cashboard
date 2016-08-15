@@ -8,9 +8,15 @@
   <% @tags.each do |tag| %>
     <tr>
       <td><%= tag.type() %></td>
-      <td><em>placeholder</em></td>
+      <td>£<%= tag.total_spent() %></td>
+      <% counter = 0 %>
       <td><% tag.merchants().each do |merchant| %>
-            <%= merchant.name() %>,
+            <% if counter == 0 %>
+                <%= merchant.name() %>
+            <% else %>
+                | <%= merchant.name() %>
+            <% end %>
+            <% counter += 1 %>
           <% end %>
       </td>
     </tr>
