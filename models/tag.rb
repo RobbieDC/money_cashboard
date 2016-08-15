@@ -32,13 +32,6 @@ class Tag
     return transactions
   end
 
-  def tag()
-    sql = "SELECT * FROM tags WHERE id = #{@tag_id};"
-    tag_data = SqlRunner.run( sql ).first
-    tag = Tag.new( tag_data )
-    return tag
-  end
-
   def self.all()
     sql = "SELECT * FROM tags;"
     tags_data = SqlRunner.run( sql )
