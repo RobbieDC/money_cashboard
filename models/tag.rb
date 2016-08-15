@@ -23,6 +23,13 @@ class Tag
     return tags
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM tags WHERE id = #{id};"
+    tag_data = SqlRunner.run( sql ).first
+    tag = Tag.new( tag_data )
+    return tag
+  end
+
   def self.delete_all()
     sql = "DELETE FROM tags;"
     SqlRunner.run( sql )
