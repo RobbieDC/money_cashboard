@@ -6,22 +6,16 @@
   </head>
   <body>
     <div class="header">
-      <div class="go_left">
-        <h2>Money Cashboard</h2>
-      </div>
+      <h2>Money Cashboard</h2>
       <nav>
-        <div class="go_right">
-          <a href="/merchants">Merchants</a> |
-          <a href="/tags">Tags</a> |
-          <a href="/transactions">Transactions</a> |
-          <a href="/merchants/new">New merchant</a> |
-          <a href="/tags/new">New tag</a> |
-          <a href="/transactions/new">New transaction</a> 
-        </div>
+        <a href="/merchants">Merchants</a> |
+        <a href="/tags">Tags</a> |
+        <a href="/transactions">Transactions</a> |
+        <a href="/merchants/new">New merchant</a> |
+        <a href="/tags/new">New tag</a> |
+        <a href="/transactions/new">New transaction</a> 
       </nav>
     </div>
-    <main>
-      <%= yield %>
-    </main>
+    <%= yield %>
   </body>
 </html>
