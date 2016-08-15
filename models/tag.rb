@@ -16,4 +16,9 @@ class Tag
     @id = new_tag["id"]
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM tags;"
+    SqlRunner.run( sql )
+  end
+
 end
