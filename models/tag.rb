@@ -25,12 +25,22 @@ class Tag
     return merchants
   end
 
-  def transactions()
-    sql = "SELECT * FROM transactions WHERE tag_id = #{@tag_id}"
+  def total_spent()
+    sql = "SELECT * FROM transactions WHERE tag_id = #{@id}"
     transaction_data = SqlRunner.run(sql)
-    transactions = transaction_data.map { |t| Transaction.new(t) }
-    return transactions
+    tag_transactions = transaction_data.map { |t| Transaction.new(t) }
+    total = 0
+    for transaction in tag_transactions
+      value = transaction.value()
+      total += value
+    end
+    return total
   end
+
+  # def total_spent()
+  #   transactions = transactions()
+  #   return transactions
+  # end
 
   def self.all()
     sql = "SELECT * FROM tags;"

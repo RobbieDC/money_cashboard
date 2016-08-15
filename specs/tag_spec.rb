@@ -1,4 +1,5 @@
 require( "minitest/autorun" )
+require_relative( "../models/tag" )
 
 class TestTag < MiniTest::Test
 
@@ -6,11 +7,11 @@ class TestTag < MiniTest::Test
     options = {
       "type" => "alcohol"
     }
-    @test_tag = Tag.new()
+    @tag_1 = Tag.new(options)
   end
 
   def test_total_spent
-    assert_equal( 87, @test_tag.total_spent )
+    assert_equal( 87, @tag_1.total_spent() )
   end
 
 end
