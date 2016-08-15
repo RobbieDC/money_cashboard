@@ -1,3 +1,15 @@
-<% @tags.each do |tag| %>
-  <p><b>Tag: </b><%= tag.type() %></p>
-<% end %>
+<h3>Tags</h3>
+<table style="width:100%">
+  <tr>
+    <th>Tag</th>
+    <th>Total Spent</th>
+    <th>Merchants</th>
+  </tr>
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= @tag.type %></td>
+      <td><em>placeholder</em></td>
+      <td><em>placedolder</em></td>
+    </tr>
+  <% end %>
+</table>
