@@ -21,15 +21,17 @@ class Transaction
   end
 
   def merchant()
-    sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
+    sql = "SELECT * FROM merchants WHERE id = #{@merchant_id};"
     merchant_data = SqlRunner.run( sql ).first
     merchant = Merchant.new( merchant_data )
     return merchant
   end
 
-  def member()
-    sql = "SELECT * FROM members WHERE id = #{@member_id}"
-    return Member.map_item(sql)
+  def tag()
+    sql = "SELECT * FROM tags WHERE id = #{@tag_id};"
+    tag_data = SqlRunner.run( sql ).first
+    tag = Tag.new( tag_data )
+    return tag
   end
 
   def self.all()
