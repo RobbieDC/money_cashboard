@@ -5,10 +5,12 @@
   </head>
   <body>
     <h1>Money Cashboard</h1>
-    <ul>
-      <li><a href="/merchants">Merchants</a></li>
-      <li><a href="/transactions">Transactions</a></li>
-    </ul>
+    <nav>
+      <a href="/merchants">Show all merchants</a> |
+      <a href="/transactions">Show all transactions</a> |
+      <a href="/merchants/new">Register new merchant</a> |
+      <a href="/transactions/new">Register new transaction</a>
+    </nav>
     <%= yield %>
   </body>
 </html>
