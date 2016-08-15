@@ -14,33 +14,3 @@ get "/merchants/:id" do
   @merchant = Merchant.find( params["id"] )
   erb(:"merchants/show")
 end
-
-# #new
-# get '/books/new' do
-#   erb(:'books/new')
-# end
-
-# #show
-# get '/books/:id' do
-#   @book = Book.find(params['id'])
-#   erb(:'books/show')
-# end
-
-# #edit
-# get '/books/:id/edit' do
-# end
-
-# #create
-# post '/books' do
-#   @book = Book.new(params)
-#   @book.save
-#   redirect to( "books" )
-# end
-
-# #update
-# post '/books/:id' do
-# end
-
-# #delete
-# delete '/books' do
-# end
