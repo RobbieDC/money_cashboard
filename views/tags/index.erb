@@ -9,7 +9,10 @@
     <tr>
       <td><%= tag.type() %></td>
       <td><em>placeholder</em></td>
-      <td><em>placedolder</em></td>
+      <td><% tag.merchants().each do |merchant| %>
+            <%= merchant.name() %>,
+          <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

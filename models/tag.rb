@@ -18,10 +18,10 @@ class Tag
   end
 
   def merchants()
-    sql = "SELECT m.* FROM merchants m 
-      INNER JOIN transactions t ON t.merchant_id = t.id 
-      WHERE t.tag_id = #{@id};"
-    return Merchant.map_items(sql)
+    sql = "SELECT m.* FROM merchants m INNER JOIN transactions t ON t.merchant_id = m.id WHERE t.tag_id = #{@id};"
+    merchant_data = SqlRunner.run( sql )
+    merchants = merchant_data.map { |merchant| Merchant.new( merchant ) }
+    return merchants
   end
 
   def self.all()
