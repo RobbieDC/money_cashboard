@@ -1,6 +1,7 @@
 require( "pg" )
 require_relative( "../db/sql_runner" )
 require_relative( "./merchant" )
+require_relative( "./transaction" )
 
 class Tag
 
@@ -22,6 +23,20 @@ class Tag
     merchant_data = SqlRunner.run( sql )
     merchants = merchant_data.map { |merchant| Merchant.new( merchant ) }
     return merchants
+  end
+
+  def transactions()
+    sql = "SELECT * FROM transactions WHERE tag_id = #{@tag_id}"
+    transaction_data = SqlRunner.run(sql)
+    transactions = transaction_data.map { |t| Transaction.new(t) }
+    return transactions
+  end
+
+  def tag()
+    sql = "SELECT * FROM tags WHERE id = #{@tag_id};"
+    tag_data = SqlRunner.run( sql ).first
+    tag = Tag.new( tag_data )
+    return tag
   end
 
   def self.all()
