@@ -19,6 +19,7 @@ end
 # index
 get "/transactions" do
   @transactions = Transaction.all()
+  @total = Transaction.total_spend()
   erb( :"transactions/index" )
 end
 
