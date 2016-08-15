@@ -8,8 +8,12 @@
     <% end %>
   </select>
 
-  <label for="tag">Type of purchase</label>
-  <input type="text" name="tag">
+  <label for="tag_id">Type of purchase</label>
+  <select name="tag_id">
+    <% @tags.each do |tag| %>
+      <option value=<%= tag.id() %>><%= tag.type() %></option>
+    <% end %>
+  </select>
 
   <label for="value">Value</label>
   <input type="number" name="value">

@@ -5,6 +5,7 @@ require_relative( "../models/transaction" )
 # new
 get "/transactions/new" do
   @merchants = Merchant.all()
+  @tags = Tag.all()
   erb( :"transactions/new" )
 end
 
