@@ -34,6 +34,16 @@ class Transaction
     return tag
   end
 
+  def self.total_spend()
+    transactions = Transaction.all()
+    total = 0
+    for transaction in transactions
+      value = transaction.value()
+      total += value
+    end
+    return total
+  end
+
   def self.all()
     sql = "SELECT * FROM transactions;"
     transactions_data = SqlRunner.run( sql )

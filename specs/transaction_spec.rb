@@ -14,4 +14,8 @@ class TestTransaction < MiniTest::Test
     assert_equal( 20, @transaction.value() )
   end
 
+  def test_total_spend
+    assert_equal( 55, Transaction.total_spend() )
+  end
+
 end
