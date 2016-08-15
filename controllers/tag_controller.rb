@@ -7,17 +7,17 @@ get "/tags/new" do
   erb( :"tags/new" )
 end
 
-# create
-post "/tags" do
-  @tag = Tag.new( params )
-  @tag.save()
-  erb( :"tags/create" )
+# index
+get "/tags" do
+  @tag = Tag.all()
+  erb( :"tags/index" )
 end
 
-# # index
-# get "/merchants" do
-#   @merchants = Merchant.all()
-#   erb( :"merchants/index" )
+# # create
+# post "/tags" do
+#   @tag = Tag.new( params )
+#   @tag.save()
+#   erb( :"tags/create" )
 # end
 
 # # show
