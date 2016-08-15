@@ -1,14 +1,18 @@
 <h3>Rgister Transaction</h3>
 
 <form action="/transactions" method="post">
-  <label for="value">Value</label>
-  <input type="number" name="value">
-
-  <label for="merchant">Merchant</label>
-  <input type="text" name="merchant">
+  <label for="merchant_id">Select merchant</label>
+  <select name="merchant_id">
+    <% @merchants.each do |merchant| %>
+      <option value=<%= merchant.id() %>><%= merchant.name() %></option>
+    <% end %>
+  </select>
 
   <label for="tag">Type of purchase</label>
   <input type="text" name="tag">
+
+  <label for="value">Value</label>
+  <input type="number" name="value">
 
   <input type="submit" value="Register transaction">
 </form>

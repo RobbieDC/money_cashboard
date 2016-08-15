@@ -1,5 +1,5 @@
 <h3>Transaction Registered</h3>
 
-<p><b>Value: £</b><%= @transaction.value() %></p>
-<p><b>Merchant: </b><%= @transaction.merchant() %></p>
-<p><b>Type of purchase: </b><%= @transaction.tag() %></p>
+<p>Value: £<%= @transaction.value() %></p>
+<p>Merchant: <%= @transaction.merchant.name() %></p>
+<p>Type of purchase: <%= @transaction.tag() %></p>

@@ -4,6 +4,7 @@ require_relative( "../models/transaction" )
 
 # new
 get "/transactions/new" do
+  @merchants = Merchant.all()
   erb( :"transactions/new" )
 end
 
