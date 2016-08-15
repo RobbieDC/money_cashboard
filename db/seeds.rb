@@ -9,14 +9,19 @@ merchant_2 = Merchant.new( { "name" => "Thai Tanic" } )
 merchant_1.save()
 merchant_2.save()
 
+tag_1 = Tag.new( { "name" => "alcohol" } )
+tag_2 = Tag.new( { "name" => "take-away" } )
+tag_1.save()
+tag_2.save()
+
 transaction_1 = Transaction.new( {
   "value" => 20, 
-  "tag" => "alcohol", 
+  "tag_id" => tag_1.id, 
   "merchant_id" => merchant_1.id
   } )
 transaction_2 = Transaction.new( {
   "value" => 30,
-  "tag" => "food",
+  "tag_id" => tag_2.id,
   "merchant_id" => merchant_2.id
   } )
 transaction_1.save()
