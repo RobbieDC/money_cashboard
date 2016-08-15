@@ -13,8 +13,8 @@ class Transaction
   end
 
   def save()
-    sql = "INSERT INTO transactions ( value, tag, merchant_id ) 
-      VALUES ( #{ @value }, '#{ @tag }', #{ @merchant_id } )
+    sql = "INSERT INTO transactions ( value, merchant_id, tag_id ) 
+      VALUES ( #{ @value }, #{ @merchant_id }, #{ @tag_id } )
       RETURNING *;"
     transaction = SqlRunner.run( sql ).first
     @id = transaction["id"]

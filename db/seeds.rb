@@ -1,5 +1,6 @@
 require_relative( "../models/merchant" )
 require_relative( "../models/transaction" )
+require_relative( "../models/tag" )
 require( "pry-byebug" )
 
 Merchant.delete_all
@@ -9,8 +10,8 @@ merchant_2 = Merchant.new( { "name" => "Thai Tanic" } )
 merchant_1.save()
 merchant_2.save()
 
-tag_1 = Tag.new( { "name" => "alcohol" } )
-tag_2 = Tag.new( { "name" => "take-away" } )
+tag_1 = Tag.new( { "type" => "alcohol" } )
+tag_2 = Tag.new( { "type" => "take-away" } )
 tag_1.save()
 tag_2.save()
 
