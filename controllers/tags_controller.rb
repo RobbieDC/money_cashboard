@@ -17,7 +17,7 @@ end
 # index
 get "/tags" do
   @tags = Tag.all()
-  @merchants = Merchants.all()
+  @merchants = Merchant.all()
   erb( :"tags/index" )
 end
 
