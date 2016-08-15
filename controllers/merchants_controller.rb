@@ -10,9 +10,9 @@ end
 
 # show
 get "/merchants/:id" do
-  return "Index - merchant by id"
-  @merchant = Merchant.new( params["id"] )
-  # erb(:"merchants/show")
+  # return "show - merchant by id"
+  @merchant = Merchant.find( params["id"] )
+  erb(:"merchants/show")
 end
 
 # #new
