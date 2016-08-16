@@ -14,4 +14,8 @@ class TestMerchant < MiniTest::Test
     assert_equal( "Black Isle Brewery", @merchant.name() )
   end
 
+  def test_total_spent
+    assert_equal( 80, @merchant.total_spent() )
+  end
+
 end

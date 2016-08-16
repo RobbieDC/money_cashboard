@@ -16,6 +16,18 @@ class Merchant
     @id = merchant["id"]
   end
 
+  def total_spent()
+    sql = "SELECT * FROM transactions WHERE merchant_id = #{@id}"
+    transaction_data = SqlRunner.run(sql)
+    merchant_transactions = transaction_data.map { |t| Transaction.new(t) }
+    total = 0
+    for transaction in merchant_transactions
+      value = transaction.value()
+      total += value
+    end
+    return total
+  end
+
   def self.all()
     sql = "SELECT * FROM merchants;"
     merchants_data = SqlRunner.run( sql )

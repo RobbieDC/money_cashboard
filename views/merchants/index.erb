@@ -1,3 +1,7 @@
 <% @merchants.each do |merchant| %>
-  <p><b>Merchant: </b><%= merchant.name() %></p>
+  <p>
+    <b>Merchant: </b><%= merchant.name() %>
+    <b>Total spent: </b><%= merchant.total_spent() %>
+  </p>
+
 <% end %>
