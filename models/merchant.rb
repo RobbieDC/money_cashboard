@@ -2,7 +2,7 @@ require( "pg" )
 require_relative( "../db/sql_runner" )
 
 class Merchant
-
+ 
   attr_reader( :id, :name )
 
   def initialize( options )
@@ -26,6 +26,13 @@ class Merchant
       total += value
     end
     return total
+  end
+
+  def tags()
+    sql = "SELECT tags.* FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE transactions.merchant_id = #{@id};"
+    tags_data = SqlRunner.run( sql )
+    tags = tags_data.map { |tag| Tag.new( tag ) }
+    return tags
   end
 
   def self.all()
