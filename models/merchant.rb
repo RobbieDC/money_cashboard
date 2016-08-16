@@ -36,6 +36,13 @@ class Merchant
     return unique_tags
   end
 
+  def tag_types()
+    tag_types = tags().map do |tag|
+      tag.type()
+    end
+    return tag_types.uniq()
+  end
+
   def self.all()
     sql = "SELECT * FROM merchants;"
     merchants_data = SqlRunner.run( sql )

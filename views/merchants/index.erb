@@ -3,18 +3,25 @@
 
   <tr>
     <th>Merchant</th>
-    <th>Tags</th>
     <th>Total spent</th>
+    <th>Tags</th>
   </tr>
 
   <% @merchants.each do |merchant| %>
     <tr>
       <td><%= merchant.name() %></td>
-      <td><% merchant.tags().each() do |tag| %>
-            <%= tag.type() %>
+      <td>£<%= merchant.total_spent() %></td>
+      <td>
+        <% counter = 0 %>
+        <% merchant.tag_types().each() do |type| %>
+          <% if counter == 0 %>
+            <%= type %>
+          <% else %>
+            | <%= type %>
           <% end %>
+          <% counter += 1 %>
+        <% end %>
       </td>
-      <td><%= merchant.total_spent() %></td>
     </tr>
   <% end %>
 

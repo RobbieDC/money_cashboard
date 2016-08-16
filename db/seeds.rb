@@ -26,8 +26,13 @@ tag_1.save()
 tag_2.save()
 tag_3.save()
 
-transaction_1 = Transaction.new( {
+transaction_1a = Transaction.new( {
   "value" => 20, 
+  "tag_id" => tag_1.id, 
+  "merchant_id" => merchant_1.id
+  } )
+transaction_1b = Transaction.new( {
+  "value" => 33, 
   "tag_id" => tag_1.id, 
   "merchant_id" => merchant_1.id
   } )
@@ -56,12 +61,19 @@ transaction_6 = Transaction.new( {
   "tag_id" => tag_2.id,
   "merchant_id" => merchant_6.id
   } )
-transaction_1.save()
+transaction_7 = Transaction.new( {
+  "value" => 35,
+  "tag_id" => tag_1.id,
+  "merchant_id" => merchant_4.id
+  } )
+transaction_1a.save()
+transaction_1b.save()
 transaction_2.save()
 transaction_3.save()
 transaction_4.save()
 transaction_5.save()
 transaction_6.save()
+transaction_7.save()
 
 binding.pry
 nil

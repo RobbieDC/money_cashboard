@@ -2,30 +2,24 @@
 <table style="width:100%">
   <tr>
     <th>Tag</th>
-    <th>Merchants</th>
     <th>Total Spent</th>
+    <th>Merchants</th>
   </tr>
   <% @tags.each do |tag| %>
     <tr>
       <td><%= tag.type() %></td>
       <td>£<%= tag.total_spent() %></td>
-      <% counter = 0 %>
       <td>
-        <ul>
+        <% counter = 0 %>
         <% tag.merchants().each do |merchant| %>
-          <li><%= merchant.name  %></li>
+          <% if counter == 0 %>
+              <%= merchant.name() %>
+          <% else %>
+              | <%= merchant.name() %>
+          <% end %>
+          <% counter += 1 %>
         <% end %>
-        </ul>
       </td>
     </tr>
   <% end %>
 </table>
-
-
-
-<%# if counter == 0 %>
-    <%#= merchant.name() %>
-<%# else %>
-   <%#= merchant.name() %>
-<%# end %>
-<%# counter += 1 %>
