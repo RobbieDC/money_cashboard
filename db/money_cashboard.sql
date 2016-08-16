@@ -15,6 +15,7 @@ CREATE TABLE tags (
 CREATE TABLE transactions (
   id serial4 primary key,
   value int4,
+  date_conducted date,
   merchant_id int4 references merchants(id) ON DELETE CASCADE,
   tag_id int4 references tags(id) ON DELETE CASCADE
 );

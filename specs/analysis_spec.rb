@@ -8,15 +8,15 @@ class TestAnalysis < MiniTest::Test
 
   def setup
     options = {
-      @merchants = Merchant.all()
-      @tags = Tag.all()
-      @transactions = Transactions.all()
+      "merchants" => Merchant.all(),
+      "tags" => Tag.all(),
+      "transactions" => Transaction.all()
     }
     @analysis = Analysis.new( options )
   end
 
   def test_merchants
-    assert_equal("Black Isle Brewery", @merchants)
+    assert_equal("Black Isle Brewery", @analysis.merchants)
   end
 
 end
