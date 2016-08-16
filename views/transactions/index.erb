@@ -2,14 +2,16 @@
 <table style="width:100%">
   <tr>
     <th>Merchant</th>
-    <th>Type of Purchase</th>
+    <th>Type of purchase</th>
     <th>Value</th>
+    <th>Date conducted</th>
   </tr>
   <% @transactions.each do |transaction| %>
     <tr>
       <td><%= transaction.merchant().name() %></td>
       <td><%= transaction.tag().type() %></td>
       <td>£<%= transaction.value() %></td>
+      <td><%= transaction.date_conducted() %></td>
     </tr>
   <% end %>
 </table>

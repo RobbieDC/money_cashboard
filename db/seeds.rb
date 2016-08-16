@@ -28,41 +28,49 @@ tag_3.save()
 
 transaction_1a = Transaction.new( {
   "value" => 20, 
+  "date_conducted" => "2016-07-18",
   "tag_id" => tag_1.id, 
   "merchant_id" => merchant_1.id
   } )
 transaction_1b = Transaction.new( {
   "value" => 33, 
+  "date_conducted" => "2016-07-19",
   "tag_id" => tag_1.id, 
   "merchant_id" => merchant_1.id
   } )
 transaction_2 = Transaction.new( {
   "value" => 30,
+  "date_conducted" => "2016-07-20",
   "tag_id" => tag_2.id,
   "merchant_id" => merchant_2.id
   } )
 transaction_3 = Transaction.new( {
   "value" => 45,
+  "date_conducted" => "2016-07-21",
   "tag_id" => tag_1.id,
   "merchant_id" => merchant_3.id
   } )
 transaction_4 = Transaction.new( {
   "value" => 15,
+  "date_conducted" => "2016-07-22",
   "tag_id" => tag_3.id,
   "merchant_id" => merchant_4.id
   } )
 transaction_5 = Transaction.new( {
   "value" => 30,
+  "date_conducted" => "2016-07-23",
   "tag_id" => tag_2.id,
   "merchant_id" => merchant_5.id
   } )
 transaction_6 = Transaction.new( {
   "value" => 30,
+  "date_conducted" => "2016-07-24",
   "tag_id" => tag_2.id,
   "merchant_id" => merchant_6.id
   } )
 transaction_7 = Transaction.new( {
   "value" => 35,
+  "date_conducted" => "2016-07-28",
   "tag_id" => tag_1.id,
   "merchant_id" => merchant_4.id
   } )
