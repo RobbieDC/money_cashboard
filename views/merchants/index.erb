@@ -10,7 +10,10 @@
   <% @merchants.each do |merchant| %>
     <tr>
       <td><%= merchant.name() %></td>
-      <td><em>Placeholder</em><%# merchant.tags() %></td>
+      <td><% merchant.tags().each() do |tag| %>
+            <%= tag.type() %>
+          <% end %>
+      </td>
       <td><%= merchant.total_spent() %></td>
     </tr>
   <% end %>
