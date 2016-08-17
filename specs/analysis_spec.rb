@@ -20,8 +20,12 @@ class TestAnalysis < MiniTest::Test
     assert_equal( "2016-01-01", transaction_date)
   end
 
-  def test_group_transactions_by_week()
-    assert_equal( "sorted_transactions", @analysis.group_transactions_by_week() )
+  # def test_group_transactions_by_week()
+  #   assert_equal( "sorted_transactions", @analysis.group_transactions_by_week() )
+  # end
+
+  def test_total_spent_per_week()
+    assert_equal( 203, @analysis.total_spent_per_week(29) )
   end
 
 end
