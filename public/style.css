@@ -4,19 +4,6 @@ body {
   font-family: Courier, monospace; 
 }
 
-ul {
-  padding-left: 0;
-}
-
-li {
-  display: inline-block;
-}
-
-li:not(:last-child):after {
-  position: relative;
-  content: "|";
-  padding-left: 10px;
-}
 th{
   text-align: left;
 }
