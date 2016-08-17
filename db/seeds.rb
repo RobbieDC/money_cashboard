@@ -1,10 +1,13 @@
 require_relative( "../models/merchant" )
 require_relative( "../models/transaction" )
 require_relative( "../models/tag" )
+require_relative( "../models/budget" )
+
 require( "pry-byebug" )
 
 Merchant.delete_all
 Tag.delete_all
+# Budget.delete_all
 
 merchant_1 = Merchant.new( { "name" => "Black Isle Brewery" } )
 merchant_2 = Merchant.new( { "name" => "Thai Tanic" } )
@@ -18,6 +21,11 @@ merchant_3.save()
 merchant_4.save()
 merchant_5.save()
 merchant_6.save()
+
+budget_1 = Budget.new( { "weekly_budget" => 150, "week_number" => 29 } )
+budget_2 = Budget.new( { "weekly_budget" => 200, "week_number" => 30 } )
+budget_1.save()
+budget_2.save()
 
 tag_1 = Tag.new( { "type" => "alcohol" } )
 tag_2 = Tag.new( { "type" => "take-away" } )
@@ -80,6 +88,12 @@ transaction_7 = Transaction.new( {
   "tag_id" => tag_1.id,
   "merchant_id" => merchant_4.id
   } )
+transaction_8 = Transaction.new( {
+  "value" => 50,
+  "date_conducted" => "2016-07-30",
+  "tag_id" => tag_1.id,
+  "merchant_id" => merchant_3.id
+  } )
 transaction_0.save()
 transaction_1a.save()
 transaction_1b.save()
@@ -89,6 +103,7 @@ transaction_4.save()
 transaction_5.save()
 transaction_6.save()
 transaction_7.save()
+transaction_8.save()
 
 binding.pry
 nil
