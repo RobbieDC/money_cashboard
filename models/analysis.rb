@@ -21,15 +21,18 @@ class Analysis
     return transactions_by_week
   end
 
-  def total_spent_per_week(week)
+  def total_spent_per_week()
     transactions_by_week = group_transactions_by_week()
-    week_of_transactions = transactions_by_week[week]
-    total_spent = 0
-    for transaction in week_of_transactions
-      value = transaction.value()
-      total_spent += value
+    spent_per_week = {}
+    for week, transactions in transactions_by_week
+      total_spent = 0
+      for transaction in transactions
+        value = transaction.value
+        total_spent += value
+      end
+      spent_per_week[week] = total_spent
     end
-    return total_spent
+    return spent_per_week
   end
 
 end

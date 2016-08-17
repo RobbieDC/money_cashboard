@@ -25,7 +25,7 @@ class TestAnalysis < MiniTest::Test
   # end
 
   def test_total_spent_per_week()
-    assert_equal( 203, @analysis.total_spent_per_week(29) )
+    assert_equal( 203, @analysis.total_spent_per_week() )
   end
 
 end
