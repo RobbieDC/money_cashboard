@@ -26,6 +26,12 @@ tag_1.save()
 tag_2.save()
 tag_3.save()
 
+transaction_0 = Transaction.new( {
+  "value" => 100, 
+  "date_conducted" => "2016-01-01",
+  "tag_id" => tag_1.id, 
+  "merchant_id" => merchant_1.id
+  } )
 transaction_1a = Transaction.new( {
   "value" => 20, 
   "date_conducted" => "2016-07-18",
@@ -74,6 +80,7 @@ transaction_7 = Transaction.new( {
   "tag_id" => tag_1.id,
   "merchant_id" => merchant_4.id
   } )
+transaction_0.save()
 transaction_1a.save()
 transaction_1b.save()
 transaction_2.save()

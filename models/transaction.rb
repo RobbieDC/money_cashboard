@@ -1,4 +1,5 @@
 require( "pg" )
+require("Date")
 require_relative( "../db/sql_runner" )
 
 class Transaction
