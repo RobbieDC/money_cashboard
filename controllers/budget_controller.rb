@@ -5,14 +5,9 @@ get "/budget/new" do
   erb( :"budget/new" )
 end
 
-# # new
-# get "/tags/new" do
-#   erb( :"tags/new" )
-# end
-
-# # create
-# post "/tags" do
-#   @tag = Tag.new( params )
-#   @tag.save()
-#   erb( :"tags/create" )
-# end
+# create
+post "/budget" do
+  @budget = Budget.new( params )
+  @budget.save()
+  erb( :"budget/create" )
+end
