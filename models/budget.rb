@@ -23,4 +23,9 @@ class Budget
     return budgets
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM budget;"
+    SqlRunner.run( sql )
+  end
+
 end

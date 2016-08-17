@@ -7,7 +7,7 @@ require( "pry-byebug" )
 
 Merchant.delete_all
 Tag.delete_all
-# Budget.delete_all
+Budget.delete_all
 
 merchant_1 = Merchant.new( { "name" => "Black Isle Brewery" } )
 merchant_2 = Merchant.new( { "name" => "Thai Tanic" } )
