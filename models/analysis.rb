@@ -8,7 +8,7 @@ class Analysis
     @merchants = options["merchants"]
     @tags = options["tags"]
     @transactions = options["transactions"]
-    @budget = options["budget"]
+    @budgets = options["budget"]
   end
 
   def group_transactions_by_week()
@@ -34,6 +34,14 @@ class Analysis
       spent_per_week[week] = total_spent
     end
     return spent_per_week
+  end
+
+  def create_budget_hash()
+    budget_hash = {}
+    for budget in @budgets
+      budget_hash[budget.week_number] = budget.weekly_budget()
+    end
+    return budget_hash
   end
 
 end
