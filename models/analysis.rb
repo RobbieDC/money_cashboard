@@ -8,6 +8,7 @@ class Analysis
     @merchants = options["merchants"]
     @tags = options["tags"]
     @transactions = options["transactions"]
+    @budget = options["budget"]
   end
 
   def group_transactions_by_week()

@@ -37,11 +37,6 @@ class Tag
     return total
   end
 
-  # def total_spent()
-  #   transactions = transactions()
-  #   return transactions
-  # end
-
   def self.all()
     sql = "SELECT * FROM tags;"
     tags_data = SqlRunner.run( sql )
