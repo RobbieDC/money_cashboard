@@ -1,0 +1,15 @@
+<h3>Budgets</h3>
+
+<table style="width:100%">
+  <tr>
+    <th>Week Number</th>
+    <th>Budget</th>
+  </tr>
+  <% @budgets.each do |budget| %>
+    <tr>
+      <td><%= budget.week_number %></td>
+      <td><%= budget.weekly_budget %></td>
+    </tr>
+  <% end %>
+
+</table>

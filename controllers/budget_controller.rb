@@ -11,3 +11,9 @@ post "/budget" do
   @budget.save()
   erb( :"budget/create" )
 end
+
+# index
+get "/budget" do
+  @budgets = Budget.all()
+  erb( :"budget/index" )
+end
