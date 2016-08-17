@@ -1,35 +1,29 @@
+<br>
 <h3>Rgister Transaction</h3>
-
+<br>
 <form action="/transactions" method="post">
-  <p>
-    <label for="merchant_id">Select merchant</label>
-    <select name="merchant_id">
-      <% @merchants.each do |merchant| %>
-        <option value=<%= merchant.id() %>><%= merchant.name() %></option>
-      <% end %>
-    </select>
-  </p>
+  <label for="merchant_id">Select merchant</label>
+  <select name="merchant_id">
+    <% @merchants.each do |merchant| %>
+      <option value=<%= merchant.id() %>><%= merchant.name() %></option>
+    <% end %>
+  </select> |
 
-  <p>
-    <label for="tag_id">Type of purchase</label>
-    <select name="tag_id">
-      <% @tags.each do |tag| %>
-        <option value=<%= tag.id() %>><%= tag.type() %></option>
-      <% end %>
-    </select>
-  </p>
+  <label for="tag_id">Type of purchase</label>
+  <select name="tag_id">
+    <% @tags.each do |tag| %>
+      <option value=<%= tag.id() %>><%= tag.type() %></option>
+    <% end %>
+  </select> |
 
-  <p>
-    <label for="value">Value</label>
-    <input type="number" name="value">
-  </p>
+  <label for="value">Value</label>
+  <input type="number" name="value"> |
 
-  <p>
-    <label for="date_conducted">Date conducted</label>
-    <input type="date" name="date_conducted">
+  <label for="date_conducted">Date conducted</label>
+  <input type="date" name="date_conducted"> 
+  
+  <input type="submit" value="Register transaction">
 
-    <input type="submit" value="Register transaction">
-  </p>
 </form>
 
 <hr>

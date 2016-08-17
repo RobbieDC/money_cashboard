@@ -6,14 +6,16 @@
   </head>
   <body>
     <div class="header">
-      <h2>Money Cashboard</h2>
+      <a href="/" class="site_title"><br><h2>Money Cashboard</h2><br></a>
       <nav>
-        <a href="/merchants">Merchants</a> |
-        <a href="/tags">Tags</a> |
-        <a href="/transactions">Transactions</a> |
-        <a href="/budget">Weekly Budgets</a> |
-        <a href="/budget/new">Set budget</a> |
-        <a href="/analysis">Spending analysis</a>
+        <ul class="nav_list">
+          <li class="nav_list_item"><a href="/merchants">Merchants</a></li>
+          <li class="nav_list_item"><a href="/tags">Tags</a></li>
+          <li class="nav_list_item"><a href="/transactions">Transactions</a></li>
+          <li class="nav_list_item"><a href="/budget">Weekly Budgets</a></li>
+          <li class="nav_list_item"><a href="/budget/new">Set budget</a></li>
+          <li class="nav_list_item"><a href="/analysis">Spending analysis</a></li>
+        </ul>
       </nav>
     </div>
     <%= yield %>

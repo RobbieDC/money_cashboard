@@ -1,7 +1,26 @@
+* {
+margin: 0;
+}
+
+
 body {
-  margin:0;
-  padding:0;
-  font-family: Courier, monospace; 
+  margin:0px;
+  padding:0px;
+  font-family: Courier, monospace;
+  background-color: WhiteSmoke;
+}
+
+.site_title {
+  text-decoration: none;
+}
+
+.home{
+  background-image: url("scrouge_mcduck.jpg");
+  background-repeat: no-repeat;
+}
+
+.header {
+  background-image: url("pile-of-coins.jpg");
 }
 
 th{
@@ -17,4 +36,37 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+
+.nav_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav_list_item {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+.nav_list_item:last-child {
+    border-right: none;
+}
+
+.nav_list_item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav_list_item a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
 }
