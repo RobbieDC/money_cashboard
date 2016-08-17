@@ -10,19 +10,15 @@ class Analysis
     @transactions = options["transactions"]
   end
 
-  def create_date_object(transaction_date)
-    day = Date.parse(transaction_date).wday
-    return day
-  end
-
   def group_transactions_by_week()
-    transaction_by_week = {}
-    weeks = []
+    transactions_by_week = {}
+    transaction_array = []
     for transaction in @transactions
       week = Date.parse( transaction.date_conducted() ).cweek
-      weeks.push( week )
+      transaction_array = [] if !(transactions_by_week[week])
+      transactions_by_week[week] = transaction_array.push( transaction )
     end
-    return weeks
+    return transactions_by_week[30].count
   end
 
   # def group_transactions_by_week()
