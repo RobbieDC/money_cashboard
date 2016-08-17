@@ -5,18 +5,22 @@
   <tr>
     <th rowspan=2>Week</th>
     <th rowspan=2>Total spent</th>
+    <th rowspan=2>Budget</th>
+    <th rowspan=2>Budget Delta</th>
     <th colspan=3 style="text-align: center;"">Transactions</th>
   </tr>
   <tr>
     <th>Merchant</th>
     <th>Value</th>
-    <th>Date</th>
+    <th>Date (yyyy/mm/dd)</th>
   </tr>
 
   <% @transactions_per_week.each do |week, transactions| %>
     <tr>
       <td><%= week %></td>
       <td>£<%= @spent_per_week[week] %></td>
+      <td>£<%= @budget_hash[week] %> </td>
+      <td>£<%= @budget_hash[week] - @spent_per_week[week] %></td>
       <td>
         <ul>
           <% transactions.each do |transaction| %>
@@ -27,7 +31,7 @@
       <td>
         <ul>
           <% transactions.each do |transaction| %>
-            <li><%= transaction.value() %></li>
+            <li>£<%= transaction.value() %></li>
           <% end %>
         </ul>
       </td>
